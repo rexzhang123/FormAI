@@ -1,8 +1,13 @@
 # FormAI
 
+
 ## Introduction
 
 FormAI utilizes advanced computer vision and machine learning technologies to analyze and improve golf swings. By providing feedback and suggestions, it helps golfers of all skill levels enhance their form and performance.
+
+
+<img src="swing.png" width="150" height="330" alt="Alt text for image">
+
 
 
 ## Installation
