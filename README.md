@@ -1,21 +1,39 @@
 # FormAI
-FormAI utilizes computer vision and machine learning to analyze your golf swing, generating suggestions for how to improve your form.
 
-To run the code, you need to set OPENAI_API_KEY and SECRET_KEY as environment variables by following the commands below: 
+## Introduction
+
+FormAI utilizes advanced computer vision and machine learning technologies to analyze and improve golf swings. By providing feedback and suggestions, it helps golfers of all skill levels enhance their form and performance.
 
 
-   
-- Run the following command in your terminal, replacing yourkey with your API key. 
+## Installation
 
-       echo "export OPENAI_API_KEY='yourkey'" >> ~/.zshrc
- 
+Before you can run FormAI, you need to install some dependencies and set up required environment variables:
 
-- Update the shell with the new variable:
+**Install Dependencies**:
+   ```bash
+   pip install mediapipe opencv-python flask
+   ```
 
-       source ~/.zshrc
- 
+**Set Environment Variables**
 
-- Confirm that you have set your environment variable using the following command. 
+Open your terminal and run the following command to set your OpenAI API key, replacing yourkey with your actual API key:
+   ```bash
+   echo "export OPENAI_API_KEY='yourkey'" >> ~/.zshrc
+   ```
+To set the secret key for your application, replace yoursecretkey with your actual secret key:
+   ```bash
+echo "export SECRET_KEY='yoursecretkey'" >> ~/.zshrc
+   ```
+Update your shell with the new variables:
+```bash
+source ~/.zshrc
+```
 
-       echo $OPENAI_API_KEY
+## Usage
 
+To run FormAI locally, use the Flask command:
+
+```bash
+
+flask run
+```
