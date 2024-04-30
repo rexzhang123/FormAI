@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="/static/styles/login.css">
+</head>
+<body>
+    <div class="login-container">
+        <a href="{{ url_for('home') }}">
+            <img src="{{ url_for('static', filename='images/FormAILogo.png') }}" class="logo" alt="FormAI Logo">
+        </a>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+            <div class="flash {{ category }}">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+        {% endwith %}
+        <form action="/register" method="post" class="login-form">
+            <h2>Register</h2>
+            <input type="email" placeholder="Email" name="email" required>
+            <input type="text" placeholder="Username" name="username" required>
+            <input type="password" placeholder="Password" name="password" required>
+            <button type="submit">Create Account</button>
+            <p>Already have an account? <a href="/login">Login</a></p>
+        </form>
+        <script>
+            window.onload = function() {
+                var success = "{{ success }}";
+                if (success === 'true') {
+                    setTimeout(function() {
+                        window.location.href = "{{ url_for('login') }}";
+                    }, 1500); 
+                }
+            };
+        </script>
+    </div>
+</body>
+</html>
